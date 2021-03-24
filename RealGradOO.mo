@@ -27,18 +27,17 @@ operator record RealGradOO
 
   // Modelica language specification does not explicitly state that function der can be overloaded
 
-  encapsulated operator function 'der' 
+  encapsulated function 'der' 
     
-    input RealGrad g;
-    input Integer i;
-    output RealGrad dxp;
+    import derxpoo.RealGradOO; 
+    
+    input RealGradOO g;
+    output RealGradOO dxp;
     
   algorithm
-  
-    // unfortionately this der is not allowed in functions, may be to try with blocks instead 
-    
+// unfortionately this der is not allowed in functions, may be to try with blocks instead
     der(dxp.val)  := g.val; 
-    der(dxp.grad) := g.grad[i];
+    der(dxp.grad) := g.grad;
   
   end 'der';
 end RealGradOO;
