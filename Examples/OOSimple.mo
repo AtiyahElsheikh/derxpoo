@@ -1,6 +1,6 @@
 within derxpoo.Examples;
 
-partial model OOSimple
+model OOSimple
    
    import derxpoo.RealGradOO; 
    type MyGrad = RealGradOO(NP=3); 
